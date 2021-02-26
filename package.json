@@ -1,0 +1,15 @@
+{
+  "name": "salerr",
+  "version": "1.0.0",
+  "description": "Salerr is product comparison and virtual trail platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
