@@ -1,3 +1,3 @@
 # Salerr
 
-Product Comparison and virtual trail platform
+Product Comparison and virtual trial platform
