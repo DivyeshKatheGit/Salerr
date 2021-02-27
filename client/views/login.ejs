@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .form-control:focus {
+            border-color: #E6AB39;
+            box-shadow: 0px 1px 1px rgba(0, 0, 0, 0) inset, 0px 0px 8px rgba(255, 100, 255, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section class="login">
+            <div class="logo">
+                <div class="imgbx">
+                    <img src="./assets/icons/logo.svg" alt="" srcset="">
+                </div>
+            </div>
+            <div class="login-details">
+                <div class="title">
+                    <h2 class="color-text ani-heading animate__animated animate__slideInLeft">Hello!</h2>
+                    <h3 class="ani-heading animate__animated animate__slideInLeft">Have we met before?</h3>
+                </div>
+
+                <div class="form-fields">
+                    <form>
+                        <div class="form-group">
+                            <label class="ani-email-l animate__animated animate__slideInLeft"
+                                for="exampleInputEmail1">Email</label>
+                            <input type="email" class="form-control ani-email-l animate__animated animate__slideInLeft "
+                                placeholder="name@email.com" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="ani-pass-l animate__animated animate__slideInLeft"
+                                for="exampleInputPassword1">Password</label>
+                            <input type="password"
+                                class="form-control ani-pass-l animate__animated animate__slideInLeft"
+                                placeholder="*********" autocomplete="off">
+                        </div>
+                        <button type="submit"
+                            class="btn btn-create ani-btn-l animate__animated animate__slideInLeft">LOG IN</button>
+                    </form><br>
+                    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+                </div>
+            </div>
+        </section>
+        <section class="banner">
+            <div class="banner-title">
+                <h3>Join and get best deals from 50+ companies</h3>
+            </div>
+            <div class="company-logos">
+                <div class="imgbx">
+                    <img src="./assets/images/Amazon_icon.png" alt="" srcset="">
+                </div>
+                <div class="imgbx">
+                    <img src="../assets/images/Flipcart_icon.png" alt="" srcset="">
+                </div>
+                <div class="imgbx">
+                    <img src="./assets/images/Snapdeal_icon.png" alt="" srcset="">
+                </div>
+                <div class="imgbx">
+                    <img src="./assets/images/Myntra_icon.png" alt="" srcset="">
+                </div>
+            </div>
+            <div class="banner-img">
+                <div class="imgbx">
+                    <img src="./assets/icons/login.svg">
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

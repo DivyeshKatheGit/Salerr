@@ -1,0 +1,286 @@
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-FREE/Gilroy-ExtraBold.otf');
+}
+@font-face {
+    font-family: SF Pro Display;
+    src: url('../fonts/SF-Font-Pro/SF-Pro-Display-Regular.otf');
+}
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: Gilroy;
+}
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  
+  main {
+    display: flex;
+    min-height: 100vh;
+  }
+  .ani-heading.animate__animated.animate__slideInLeft {
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-name.animate__animated.animate__slideInLeft {
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-email.animate__animated.animate__slideInLeft {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-pass.animate__animated.animate__slideInLeft {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-btn.animate__animated.animate__slideInLeft {
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-email-l.animate__animated.animate__slideInLeft {
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-pass-l.animate__animated.animate__slideInLeft {
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+  }
+  .ani-btn-l.animate__animated.animate__slideInLeft {
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in-out;
+  }
+  .login {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .logo {
+    width: 60%;
+    margin-left: 10%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+  }
+  .logo .imgbx {
+    height: 100px;
+    width: 100px;
+  }
+  .banner {
+    background: rgba(230, 171, 57, 0.15);
+    width: 50%;
+  }
+  .login-details {
+    /* height: 90%; */
+    width: 60%;
+    margin-left: 10%;
+    /* background-color: red; */
+  }
+  .logo p {
+    font-size: 25px !important;
+  }
+  span.color-text {
+    font-size: 50px !important;
+  }
+  input {
+    height: 40px;
+    margin: 8px 0px 24px 0px !important;
+    border: 1px solid #d6d3cb !important;
+  }
+  input:hover {
+    border-color: black !important;
+  }
+  input:focus {
+    border-color: #e6ab39 !important;
+  }
+  .form-control:focus {
+    border-color: red;
+    box-shadow: 0px 1px 1px rgba(235, 0, 0, 0) inset,
+      0px 0px 8px rgba(255, 100, 255, 0.5);
+  }
+  ::placeholder {
+    font-size: 14px !important;
+    font-family: SF Pro Display !important;
+    font-weight: 400 !important;
+    color: #d6d3cb !important;
+  }
+  
+  .btn {
+    width: 100%;
+    /* height: 80px !important; */
+    padding: 16px 0px 16px 0px !important;
+    background-color: #d6d3cb !important;
+    color: white !important;
+    transition: 0.5s ease !important;
+    font-family: SF Pro Display !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    margin-top: 8px;
+    /* cursor: not-allowed !important; */
+  }
+  .btn-enable {
+    background-color: #e6ab39 !important;
+    cursor:pointer !important;
+  }
+  
+  .btn-create {
+    font-size: 12px !important;
+  }
+  /* .btn-create:hover {
+    letter-spacing: 1px;
+  } */
+  
+  .color-text {
+    color: #e6ab39;
+  }
+  
+  .title {
+    margin-top: 48px;
+  }
+  h2 {
+    font-size: 52px !important;
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-family: Gilroy;
+    margin-bottom: 4px !important;
+  }
+  h3 {
+    font-style: normal;
+    font-weight: 700 !important;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+    font-family: Gilroy;
+    margin-bottom: 40px !important;
+    color: #171106 !important;
+  }
+  
+  a {
+    color: #e6ab39 !important;
+    text-decoration: none !important;
+  }
+  
+  label {
+    font-weight: 700 !important;
+    color: #171106 !important;
+    font-size: 15px !important;
+    display: block !important;
+    font-family: SF Pro Display;
+  }
+  p {
+    font-weight: 500 !important;
+    color: black !;
+    font-size: 16px !important;
+    font-family: SF Pro Display !important;
+    margin-bottom: 12px !important;
+    color: #433f37;
+  }
+  
+  .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 100px 0px 100px 0px; */
+  }
+  .banner-title {
+    max-width: 400px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  .banner-title h3 {
+    text-align: center;
+  }
+  .banner-img {
+    max-width: 600px;
+    max-height: 500px;
+    /* background-color: red; */
+  }
+  .imgbx {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .imgbx img {
+    width: 90%;
+    height: 90%;
+  }
+  .company-logos {
+    /* background-color: red; */
+    display: flex;
+    height: 80px;
+    width: 60%;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+  .company-logos .imgbx {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  .company-logos .imgbx img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 992px) {
+    h3 {
+      font-size: 22px !important;
+    }
+    .company-logos {
+      width: 80%;
+    }
+    .company-logos .imgbx {
+      height: 50px;
+      width: 50px;
+    }
+  }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 35px !important;
+    }
+    h3 {
+      font-size: 17px !important;
+    }
+    p {
+      font-size: 12px !important;
+    }
+  }
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 35px !important;
+    }
+    h3 {
+      font-size: 16px !important;
+    }
+    .login {
+      width: 100%;
+    }
+    .login-details {
+      margin-left: 0%;
+    }
+    p {
+      font-size: 13px !important;
+    }
+    .banner {
+      display: none;
+    }
+    .login-details {
+      width: 80%;
+    }
+    .logo {
+      margin-left: 0% !important;
+      width: 80%;
+    }
+  }
+  
