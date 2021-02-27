@@ -19,5 +19,5 @@ app.set('views',path.join(__dirname,'client/views'));
 
 //listen
 server.listen(PORT,()=>{
-    console.log(`Server is up and running at ${PORT}`);
+    console.log(`Server is up and running at http://localhost:${PORT}`);
 });

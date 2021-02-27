@@ -1,0 +1,122 @@
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-FREE/Gilroy-ExtraBold.otf');
+}
+@font-face {
+    font-family: SF Pro Display;
+    src: url('../fonts/SF-Font-Pro/SF-Pro-Display-Regular.otf');
+}
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: Gilroy;
+}
+
+::selection {
+    background-color: #E6AB3944;
+}
+
+a, a:hover, a:visited, a:active {
+    color: black;
+    text-decoration: none;
+}
+h1 {
+    font-weight: 800;
+    font-size: 50px;
+}
+.intro {
+    background: linear-gradient(180deg, #FEFAF3 59.14%, rgba(255, 255, 255, 0.84) 100%);
+    min-height: 100vh;
+}
+.navbar {
+    height: 10vh;
+    font-size: 18px;
+    /* padding: 0 150px; */
+}
+
+.navbar-brand {
+    margin-right: 100px;
+}
+.navbar .nav-item {
+    margin-right: 32px;
+}
+.btn1 {
+    width: 110px;
+    height: 40px;
+    border-radius: 4px;
+    border: none;
+}
+
+.btn-login {
+    background-color: #E6AB3944;
+    color: #E6AB39;
+    margin-right: 30px;
+}
+.btn-signup {
+    background-color: #E6AB39;
+    color: #ffffff;
+}
+.btn-shop {
+    background-color: #E6AB39;
+    color: #ffffff;
+    height: 60px;
+    width: 250px;
+    margin-top: 32px;
+}
+
+.companies {
+    margin-top: 100px;
+}
+
+h2 {
+    font-weight: 800;
+    text-align: center;
+}
+.features h5 {
+    margin-top: 25px;
+    font-weight: bold;
+}
+.features {
+    margin: 70px 0;
+}
+
+.says {
+    position: relative;
+    padding: 70px 0;
+    background-color: #E6AB39;
+    color: #ffffff;
+    text-align: center;
+}
+
+.comment {
+    padding: 50px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.comma {
+    opacity: 0.3;
+    position: absolute;
+    right: 10%;
+}
+
+.experience {
+    margin: 50px 0;
+}
+
+.experience h1 {
+    font-size: 40px;
+}
+
+.footer {
+    padding: 25px 0;
+    background-color: #171106;
+}
+
+.footer a {
+    width: max-content;
+    color: #ffffff;
+}
