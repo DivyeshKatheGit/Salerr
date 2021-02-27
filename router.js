@@ -9,4 +9,11 @@ router.get('/',(req,res)=>
     res.send('Hello! This is server');
 });
 
+router.get('/login',(req,res)=>
+{
+    res.render('login',{
+        error : 'none'
+    });
+})
+
 module.exports = router;

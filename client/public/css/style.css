@@ -29,6 +29,7 @@ h1 {
     background: linear-gradient(180deg, #FEFAF3 59.14%, rgba(255, 255, 255, 0.84) 100%);
     min-height: 100vh;
 }
+
 .navbar {
     height: 10vh;
     font-size: 18px;
@@ -41,6 +42,13 @@ h1 {
 .navbar .nav-item {
     margin-right: 32px;
 }
+
+
+.lottie-container .lottie-svg
+{
+    width: 70%;
+}
+
 .btn1 {
     width: 110px;
     height: 40px;
@@ -49,7 +57,7 @@ h1 {
 }
 
 .btn-login {
-    background-color: #E6AB3944;
+    background: rgba(230,171,57,0.15);
     color: #E6AB39;
     margin-right: 30px;
 }
