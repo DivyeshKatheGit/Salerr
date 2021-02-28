@@ -14,6 +14,12 @@ router.get('/login',(req,res)=>
     res.render('login',{
         error : 'none'
     });
-})
+});
+
+router.get('/signup',(req,res)=>{
+    res.render('signup',{
+        error : 'none'
+    });
+});
 
 module.exports = router;
