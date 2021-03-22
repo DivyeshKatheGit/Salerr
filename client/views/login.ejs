@@ -35,20 +35,23 @@
                 </div>
 
                 <div class="form-fields">
-                    <form>
+                    <form action="/loginApp" method="POST">
                         <div class="form-group">
                             <label class="ani-email-l animate__animated animate__slideInLeft"
                                 for="exampleInputEmail1">Email</label>
                             <input type="email" class="form-control ani-email-l animate__animated animate__slideInLeft "
-                                placeholder="name@email.com" autocomplete="off">
+                                placeholder="name@email.com" autocomplete="off" name="email">
                         </div>
                         <div class="form-group">
                             <label class="ani-pass-l animate__animated animate__slideInLeft"
                                 for="exampleInputPassword1">Password</label>
                             <input type="password"
                                 class="form-control ani-pass-l animate__animated animate__slideInLeft"
-                                placeholder="*********" autocomplete="off">
+                                placeholder="*********" autocomplete="off" name="password">
                         </div>
+                        <%if(status === 'error'){%>
+                            <p class="error"><%=message%></p>
+                        <%}%>
                         <button type="submit"
                             class="btn btn-create ani-btn-l animate__animated animate__slideInLeft">LOG IN</button>
                     </form><br>

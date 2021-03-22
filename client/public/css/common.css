@@ -6,7 +6,7 @@
     font-family: SF Pro Display;
     src: url('../fonts/SF-Font-Pro/SF-Pro-Display-Regular.otf');
 }
-@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap"); */
 * {
     margin: 0%;
     padding: 0%;
@@ -231,6 +231,15 @@
     width: 70%;
     height: 70%;
     object-fit: contain;
+  }
+
+  .error
+  {
+    color: #E64E39;
+    font-size: 14px!important;
+    font-weight: 500!important;
+    margin: 0!important;
+    margin-top: -15px!important;
   }
   
   @media (max-width: 992px) {

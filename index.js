@@ -13,9 +13,9 @@ const server = http.createServer(app);
 
 //middlewares
 app.use(express.static(path.join(__dirname,'client/public')));
-app.use(router);
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'client/views'));
+app.use(router);
 
 //listen
 server.listen(PORT,()=>{

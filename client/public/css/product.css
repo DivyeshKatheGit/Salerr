@@ -1,0 +1,259 @@
+@font-face {
+  font-family: Gilroy;
+  src: url('../fonts/Gilroy-FREE/Gilroy-ExtraBold.otf');
+}
+@font-face {
+  font-family: SF Pro Display;
+  src: url('../fonts/SF-Font-Pro/SF-Pro-Display-Regular.otf');
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #ffffff;
+}
+header {
+  /* background-color: aqua; */
+  padding: 10px 150px 10px 150px;
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #EFEDEA;
+}
+
+header .search_box
+{
+  width: 640px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid #D6D3CB;
+}
+
+header .search_box img
+{
+  margin: 0 10px;
+}
+
+header .search_box input
+{
+  border: none;
+  outline: none;
+  height: 90%;
+  width: 90%;
+  color: #918878;
+  font-size: 14px;
+  padding-left: 5px;
+  font-family: SF Pro Display;
+  font-weight: 500;
+}
+
+header .user_profile
+{
+  display: flex;
+  align-items: center;
+}
+
+header .user_profile img
+{
+  cursor: pointer;
+}
+
+header .user_profile .user_initials
+{
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 0 15px 0 25px;
+  background-color: #e6ab39;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: Gilroy;
+  cursor: pointer;
+
+}
+
+
+.items{
+  
+  padding: 80px 0px 0px 0px;
+
+}
+h3 {
+  font-weight: 800;
+  font-size: 32px;
+  margin-left: 20px;
+  font-family: Gilroy;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background-color: blueviolet; */
+  height: 231px;
+  overflow: hidden;
+}
+.cardheight {
+  height: auto;
+}
+.products {
+  padding: 144px 150px 144px 150px;
+}
+.card {
+  width: 168px;
+  height: 211px;
+  text-align: center;
+  margin: 10px;
+}
+.card .imgbx {
+  width: 168px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin-bottom: 12px;
+}
+.card .imgbx img {
+  width: 80%;
+  height: auto;
+}
+.card a {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: SF Pro Display;
+  color: black;
+  text-decoration: none;
+}
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: SF Pro Display;
+  color: black;
+}
+.viewmore {
+  cursor: pointer;
+  text-align: center;
+  font-family: SF Pro Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: #e6ab39;
+  margin-top: 40px;
+}
+footer {
+  /* height: 256px; */
+  width: 100%;
+  background: #171106;
+  padding: 0px 150px 0px 150px;
+}
+.footer-logo {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px 32px 0px;
+}
+.footer-links {
+  display: flex;
+  justify-content: center;
+}
+.footer-links a {
+  padding: 0px 24px;
+  font-weight: 600;
+  color: white;
+  font-size: 16px;
+  font-family: SF Pro Display;
+  text-decoration: none;
+}
+.footer-social {
+  color: white;
+  font-family: SF Pro Display;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 0px 22px 0px;
+  font-size: 14px;
+}
+.footer-sicons {
+  width: 144px;
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+}
+.footer-sicons a {
+  text-decoration: none;
+  color: white;
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .cards {
+    justify-content: center;
+  }
+  .products {
+    padding: 80px 50px 80px 50px;
+    text-align: center;
+  }
+  h3 {
+    margin: 0%;
+  }
+  .cards {
+    height: 462px;
+  }
+  .cardheight {
+    height: auto;
+  }
+  header {
+    padding: 0px 30px 0px 30px;
+  }
+  footer {
+    padding: 0px 30px 0px 30px;
+  }
+  .footer-social {
+    flex-direction: column;
+  }
+  .footer-sicons {
+    margin-top: 10px;
+  }
+  .footer-links {
+    flex-direction: column;
+    text-align: center;
+    padding: 0px;
+  }
+  .footer-links a {
+    margin: 10px 0px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  .footer-links a {
+    font-size: 11px;
+  }
+  /* .footer-social{
+        font-size: 8px;
+    } */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+}

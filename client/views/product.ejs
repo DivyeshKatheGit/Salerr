@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+            crossorigin="anonymous">
+        </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/icons/Logo.svg" alt="" srcset="">
+        </div>
+        <div class="search_box">
+            <img src="./assets/icons/search.png" alt="Q"/>
+            <input type="text" placeholder="What are you looking for?">
+        </div>
+        <div class="user_profile">
+            <img src="./assets/icons/Heart.svg"/>
+            <div class="user_initials">
+                <% if(status==="success"){%>
+                    <%=profileCode%>
+                <%}%>   
+            </div>
+        </div>
+    </header>
+    <main class="products">
+        <section class="categories">
+            <h3 style="margin-bottom: 30px;">Categories</h3>
+            <div id="categories" class="cards">
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="#electronics">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 21.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Clothes</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 22.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Furniture</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 23.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Footwear</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 24.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Kitchen & Dining</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 25.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Stationery</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 21.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Clothes</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 22.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Furniture</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 23.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Footwear</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 24.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Kitchen & Dining</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 25.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Stationery</h4>
+                    </a>
+                </div>
+
+            </div>
+            <p id="categories_load" class="viewmore">View More <svg style="margin-left:5px ;" width="11" height="7"
+                    viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.24264 5.24264L9.48528 1" stroke="#E6AB39" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </p>
+            <hr style="border: .5px solid rgba(239, 237, 234, 1);margin-top: 36px;">
+        </section>
+        <section id="electronics" class="items" style="margin-top:40px">
+            <h3 style="margin-bottom: 30px;">Electronics</h3>
+            <div id="categories" class="cards">
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+                <div class="card">
+                    <div class="imgbx">
+                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    </div>
+                    <a href="">
+                        <h4>Electronics</h4>
+                    </a>
+                </div>
+
+            </div>
+            <p id="categories_load" class="viewmore">View More <svg style="margin-left:5px ;" width="11" height="7"
+                    viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.24264 5.24264L9.48528 1" stroke="#E6AB39" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </p>
+            <hr style="border: .5px solid rgba(239, 237, 234, 1);margin-top: 36px;">
+
+
+        </section>
+    </main>
+    <footer>
+        <div class="footer-logo">
+
+            <img src="./assets/icons/footer.svg" alt="" srcset="">
+        </div>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Features</a>
+            <a href="#">Help</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <hr style="border: 0.5px solid rgba(239, 237, 234, 0.3);margin-top: 56px;">
+        <div class="footer-social">
+            <p>© 2020 Salerr. All rights reserved</p>
+            <div class="footer-sicons">
+                <a href="#"><img src="./assets/icons/Instagram.svg"></a>
+                <a href="#"><img src="./assets/icons/Dribbble.svg"></a>
+                <a href="#"><img src="./assets/icons/Twitter.svg"></a>
+                <a href="#"><img src="./assets/icons/Dribbble.svg"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/product.js"></script>
+</body>
+
+</html>
