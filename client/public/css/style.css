@@ -23,7 +23,7 @@ a, a:hover, a:visited, a:active {
 }
 h1 {
     font-weight: 800;
-    font-size: 50px;
+    font-size: 70px;
 }
 .intro {
     background: linear-gradient(180deg, #FEFAF3 59.14%, rgba(255, 255, 255, 0.84) 100%);
@@ -33,6 +33,7 @@ h1 {
 .navbar {
     height: 10vh;
     font-size: 18px;
+    background-color: #ffffff;
     /* padding: 0 150px; */
 }
 
@@ -46,7 +47,7 @@ h1 {
 
 .lottie-container .lottie-svg
 {
-    width: 70%;
+    width: 100%;
 }
 
 .btn1 {

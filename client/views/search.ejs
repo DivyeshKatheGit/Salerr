@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
@@ -15,6 +16,13 @@
     <title>Product</title>
 </head>
 <body>
+    <div class="loader_wrapper">
+        <div class="spinner">
+            <div class="inner one"></div>
+            <div class="inner two"></div>
+            <div class="inner three"></div>
+          </div>
+    </div>
     <header>
         <div class="logo">
             <img src="./assets/icons/Logo.svg" alt="" srcset="">
@@ -23,6 +31,10 @@
             <img src="./assets/icons/search.png" alt="Q"/>
             <form method="POST" action="/search" id="serach_form">
                 <input type="text" placeholder="What are you looking for?" id="search" name="search">
+                <div class="user_data">
+                    <input type="hidden" id="user_email" value='<%=userEmail%>' />
+                    <input type="hidden" id="user_name" value='<%=userName%>' />
+                </div>
             </form>
         </div>
         <div class="user_profile">
@@ -45,6 +57,7 @@
                     <% } %>
                     <!-- <p>Filter</p> -->
                 </div>
+
     
                 <div class="product_list">
                     <% if(isEmpty){ %>
@@ -73,9 +86,15 @@
                                     </div>
                                 </div>
                                 <div class="product_buttons">
-                                    <div class="wishlist product_btn">
-                                        <img src="./assets/icons/HeartWish.svg" />
-                                    </div>
+                                    <% if(IDarr.includes(d.id)) { %>
+                                        <div class="wishlist product_btn" data-id='<%= d.id %>' data-status='true'>
+                                            <img src="./assets/icons/HeartWishFill.svg" />
+                                        </div>
+                                    <% } else{ %>
+                                        <div class="wishlist product_btn" data-id='<%= d.id %>' data-status="false">
+                                            <img src="./assets/icons/HeartWish.svg" />
+                                        </div>
+                                    <% } %>
                                     <div class="redirect product_btn">
                                         <a target="_blank" href=<%=d.product_link %>><img src="./assets/icons/Link.svg" /></a>
                                     </div>
@@ -89,6 +108,8 @@
 
     </main>
     <script src="./js/search.js"></script>
+    <script src="./js/ratings.js"></script>
+    <script src="./js/favourites.js"></script>
 
 </body>
 </html>

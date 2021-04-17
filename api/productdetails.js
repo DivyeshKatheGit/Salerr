@@ -8,6 +8,11 @@ function formatResponse(data)
     return data;
 }
 
+function sortByPrice(data)
+{
+
+}
+
 function filterResponse(data)
 { 
 
@@ -34,8 +39,12 @@ function filterResponse(data)
 function getCategoryData(data,product)
 {
 
+    let regxp = new RegExp(product,'gi');
     let CategoryData = data.filter((d)=>{
-        return (d.category).toLowerCase() === (product).toLowerCase()
+        if((d.category).match(regxp) || (d.product_name).match(regxp))
+        {
+            return d;
+        }
     });
     return CategoryData;
 }
@@ -91,6 +100,7 @@ function getProductFromID(id)
             let Cdata = getProduct(response.data,id);
             let data = formatResponse(Cdata);
             // console.log(data.length);
+            // console.log(data);
             resolve(data)
         })
         .catch(error =>{
@@ -99,4 +109,39 @@ function getProductFromID(id)
     })
 }
 
-module.exports = {getProductDetails,getSearchedProduct,getProductFromID};
+function getWishlist(IDarr)
+{
+
+    let products = [];
+    return new Promise((resolve,reject)=>{
+        var loop = new Promise((res,rej)=>{
+            IDarr.forEach((id,indx)=>{
+                getProductFromID(id)
+                .then((resp)=>{
+                    products.push(resp);
+                    if(products.length == IDarr.length)
+                    {
+                        // console.log(products.length);
+                        res(products);
+                    }
+                })
+                .catch((err)=>{
+                    rej(err);
+                    console.log(err);
+                })
+                
+            })
+        })
+
+        loop.then((response)=>{
+            console.log(response.length);
+            resolve(response)
+        })
+        .catch((err)=>{
+            reject(err);
+        })
+        
+    })
+}
+
+module.exports = {getProductDetails,getSearchedProduct,getProductFromID,getWishlist};

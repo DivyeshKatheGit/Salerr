@@ -22,9 +22,6 @@ conn.connect((err)=>{
     else
     {
         console.log('connected');
-        setTimeout(()=>{
-          conn.destroy();
-        },5000);
     }
 });
 
