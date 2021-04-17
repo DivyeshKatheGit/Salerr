@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
         integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
         crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
-            crossorigin="anonymous">
-        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
+        crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -23,15 +23,22 @@
         </div>
         <div class="search_box">
             <img src="./assets/icons/search.png" alt="Q"/>
-            <input type="text" placeholder="What are you looking for?">
+            <form method="POST" action="/search" id="serach_form">
+                <input type="text" placeholder="What are you looking for?" id="search" name="search">
+                <div class="user_data">
+                    <input type="hidden" id="user_email" value='<%=userEmail%>' />
+                    <input type="hidden" id="user_name" value='<%=userName%>' />
+                </div>
+            </form>
         </div>
         <div class="user_profile">
-            <img src="./assets/icons/Heart.svg"/>
+            <a href="/favourites"><img src="./assets/icons/Heart.svg"/></a>
             <div class="user_initials">
                 <% if(status==="success"){%>
                     <%=profileCode%>
                 <%}%>   
             </div>
+            
         </div>
     </header>
     <main class="products">
@@ -48,7 +55,7 @@
                 </div>
                 <div class="card">
                     <div class="imgbx">
-                        <img src="./assets/images/Rectangle 21.png" alt="" srcset="">
+                        <img src="./assets/images/Rectangle 23.png" alt="" srcset="">
                     </div>
                     <a href="">
                         <h4>Clothes</h4>
@@ -56,63 +63,15 @@
                 </div>
                 <div class="card">
                     <div class="imgbx">
-                        <img src="./assets/images/Rectangle 22.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Furniture</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 23.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Footwear</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 24.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Kitchen & Dining</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 25.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Stationery</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
                         <img src="./assets/images/Rectangle 21.png" alt="" srcset="">
                     </div>
                     <a href="">
-                        <h4>Clothes</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 22.png" alt="" srcset="">
-                    </div>
-                    <a href="">
                         <h4>Furniture</h4>
                     </a>
                 </div>
                 <div class="card">
                     <div class="imgbx">
-                        <img src="./assets/images/Rectangle 23.png" alt="" srcset="">
+                        <img src="./assets/images/Rectangle 22.png" alt="" srcset="">
                     </div>
                     <a href="">
                         <h4>Footwear</h4>
@@ -136,64 +95,84 @@
                 </div>
 
             </div>
-            <p id="categories_load" class="viewmore">View More <svg style="margin-left:5px ;" width="11" height="7"
-                    viewBox="0 0 11 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5.24264 5.24264L9.48528 1" stroke="#E6AB39" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </p>
+           
             <hr style="border: .5px solid rgba(239, 237, 234, 1);margin-top: 36px;">
         </section>
-        <section id="electronics" class="items" style="margin-top:40px">
-            <h3 style="margin-bottom: 30px;">Electronics</h3>
+        <% Object.keys(data).forEach(function(prop) { %>
+            <section id=<%= prop %> class="items" style="margin-top:40px">
+                <h3 style="margin-bottom: 30px;"><%= prop %></h3>
+                <div id="categories" class="cards">
+                    <% data[prop].forEach(d =>{ %>
+                        <div class="card">
+                            <div class="imgbx">
+                                <img src=<%=d.product_image[0].name %> alt="" srcset="">
+                                <div class="product_feature">
+                                    <% if(prop === "clothes") { %>
+                                        <form method="POST" action="/trial">
+                                            <input type="hidden" value='<%= d.id %>' name="id" />
+                                            <button type="submit" style="outline: none; border: none; background: none;">
+                                                <div class="try product_btn">
+                                                    <img src="./assets/icons/3d.svg" />
+                                                </div>
+                                            </button>
+                                        </form>
+                                    <% } %>
+                                    <div class="wishlist product_btn" data-id=<%= d.id %>>
+                                        <img src="./assets/icons/HeartWish.svg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_info">
+                                <p class="product_price">&#8377; <%=d.product_price %></p>
+                                <p class="product_desc"><a target="_blank" href=<%=d.product_link %>><%= d.product_name %></a></p>
+                                <div class="product_review">
+                                    <% if(d.site === "Amazon"){ %>
+                                        <img src="./assets/images/Amazon_icon.png"/>
+                                    <% } %>
+                                    <% if(d.site === "Snapdeal"){ %>
+                                        <img src="./assets/images/Snapdeal_Logo.png"/>
+                                    <% } %>
+                                    <% if(d.site === "Flipcart"){ %>
+                                        <img src="./assets/images/Flipcart_icon.png"/>
+                                    <% } %>
+                                    <div class="stars_outer" data-rating=<%= d.rating %>>
+                                        <div class="stars_inner"></div>
+                                    </div>
+                                    <p class="product_rating_points"><%= d.rating %></p>
+                                </div>
+                            </div>
+                        </div>
+                    <% }) %>
+                </div>
+                <hr style="border: .5px solid rgba(239, 237, 234, 1);margin-top: 36px;">
+            </section>
+          <% }); %>
+    
+        <!-- <section id="clothes" class="items" style="margin-top:40px">
+            <h3 style="margin-bottom: 30px;">Clothes</h3>
             <div id="categories" class="cards">
+                
                 <div class="card">
                     <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                        <img src="./assets/images/TGFront.png" alt="" srcset="">
+                        <div class="product_feature">
+                            <div class="trial product_btn">
+                                <img src="./assets/icons/Trial.svg" />
+                            </div>
+                            <div class="wishlist product_btn">
+                                <img src="./assets/icons/HeartWish.svg" />
+                            </div>
+                        </div>
                     </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
+                    <div class="product_info">
+                        <p class="product_price">&#8377; 399.00</p>
+                        <p class="product_desc"></p>
+                        <div class="product_review">
+                            <img src="./assets/images/Amazon_icon.png"/>
+                            <p>Stars</p>
+                            <p class="product_review_points">4.7</p>
+                        </div>
                     </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
-                </div>
-                <div class="card">
-                    <div class="imgbx">
-                        <img src="./assets/images/Rectangle 20.png" alt="" srcset="">
-                    </div>
-                    <a href="">
-                        <h4>Electronics</h4>
-                    </a>
                 </div>
 
             </div>
@@ -204,9 +183,8 @@
                 </svg>
             </p>
             <hr style="border: .5px solid rgba(239, 237, 234, 1);margin-top: 36px;">
+        </section> -->
 
-
-        </section>
     </main>
     <footer>
         <div class="footer-logo">

@@ -17,10 +17,14 @@ conn.connect((err)=>{
     if (err) 
     {
         console.log(err);
+        console.log('connection closed');
     }
     else
     {
         console.log('connected');
+        setTimeout(()=>{
+          conn.destroy();
+        },5000);
     }
 });
 

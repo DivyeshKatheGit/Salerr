@@ -11,7 +11,6 @@
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         .form-control:focus {
             border-color: #E6AB39;
@@ -22,6 +21,14 @@
 
 <body>
     <main>
+        <div class="loader_wrapper">
+            <p>Logging In...</p>
+            <div class="spinner">
+                <div class="inner one"></div>
+                <div class="inner two"></div>
+                <div class="inner three"></div>
+              </div>
+        </div>
         <section class="login">
             <div class="logo">
                 <div class="imgbx">
@@ -52,7 +59,7 @@
                         <%if(status === 'error'){%>
                             <p class="error"><%=message%></p>
                         <%}%>
-                        <button type="submit"
+                        <button onclick="loading()" type="submit"
                             class="btn btn-create ani-btn-l animate__animated animate__slideInLeft">LOG IN</button>
                     </form><br>
                     <p>Don't have an account? <a href="/signup">Sign up</a></p>
@@ -85,6 +92,13 @@
         </section>
     </main>
     <script src="./js/common.js"></script>
+    <script>
+        function loading()
+        {
+            console.log('load')
+            $('.loader_wrapper').css('display','flex');
+        }
+    </script>
 </body>
 
 </html>

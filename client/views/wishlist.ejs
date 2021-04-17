@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="./css/wishlist.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./assets/icons/Logo.svg" alt="" srcset="">
+        </div>
+        <div class="search_box">
+            <img src="./assets/icons/search.png" alt="Q"/>
+            <input type="text" placeholder="What are you looking for?">
+        </div>
+        <div class="user_profile">
+            <a href="/favourites"><img src="./assets/icons/Heart.svg"/></a>
+            <div class="user_initials">
+                <% if(status==="success"){%>
+                    <%=profileCode%>
+                <%}%>   
+            </div>
+        </div>
+    </header>
+    <% if(isEmpty){ %>
+        <div class="container container_empty">
+            <div class="container_info">
+                <p>Nothing saved, yet</p>
+                <p>Save items you like just<br>pressing<br><img src="./assets/icons/HeartWishFill.svg"/></p>
+            </div>
+            <div class="container_browse">
+                <button>Browse now</button>
+            </div>
+        </div>
+      <% } else{ %>  
+        <div class="container container_wishlist">
+            <section class="items" style="margin-top:40px">
+                <h3 style="margin-bottom: 30px;">Products I like</h3>
+                <div id="categories" class="cards">
+                    <div class="card">
+                        <div class="imgbx">
+                            <img src="./assets/images/TGFront.png" alt="" srcset="">
+                            <div class="product_feature">
+                                <div class="trial product_btn">
+                                    <img src="./assets/icons/Trial.svg" />
+                                </div>
+                                <div class="wishlist product_btn">
+                                    <img src="./assets/icons/HeartWish.svg" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product_info">
+                            <p class="product_price">&#8377; 399.00</p>
+                            <p class="product_desc"></p>
+                            <div class="product_review">
+                                <img src="./assets/images/Amazon_icon.png"/>
+                                <p>Stars</p>
+                                <p class="product_review_points">4.7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="container_browse">
+                <button>Browse now</button>
+            </div>
+        </div>
+     <% } %>
+</body>
+</html>

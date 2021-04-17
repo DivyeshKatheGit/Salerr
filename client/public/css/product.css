@@ -46,14 +46,20 @@ header .search_box img
   margin: 0 10px;
 }
 
+header .search_box form
+{
+  width: 90%;
+  height: 90%;
+}
+
 header .search_box input
 {
   border: none;
   outline: none;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   color: #918878;
-  font-size: 14px;
+  font-size: 18px;
   padding-left: 5px;
   font-family: SF Pro Display;
   font-weight: 500;
@@ -98,13 +104,13 @@ h3 {
   font-size: 32px;
   margin-left: 20px;
   font-family: Gilroy;
+  text-transform: capitalize;
 }
 .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   /* background-color: blueviolet; */
-  height: 231px;
   overflow: hidden;
 }
 .cardheight {
@@ -115,23 +121,145 @@ h3 {
 }
 .card {
   width: 168px;
-  height: 211px;
+  /* height: 211px; */
   text-align: center;
   margin: 10px;
 }
 .card .imgbx {
+  position: relative;
   width: 168px;
   height: 168px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f6f6f6;
-  margin-bottom: 12px;
+  border-radius: 8px;
 }
+
 .card .imgbx img {
-  width: 80%;
-  height: auto;
+  width: 70%;
+  max-height: 70%;
 }
+
+.card .imgbx .product_feature
+{
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  display: flex;
+}
+
+.card .imgbx .product_btn
+{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.card .imgbx .product_btn:hover
+{
+  background-color: #efedea;
+}
+
+.card .imgbx .product_btn img
+{
+  width: 12px;
+}
+
+.card .product_info
+{
+  margin-top: 12px;
+  padding-left: 3px;
+  text-align: left;
+}
+
+.card .product_info .product_price
+{
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: SF Pro Display;
+}
+
+.card .product_info .product_desc
+{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .product_info .product_desc a
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #6D6C6B;
+  font-family: SF Pro Display;
+}
+
+.card .product_info .product_review
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.card .product_info .product_review .stars_outer
+{
+  position: relative;
+  display: inline-block;
+}
+
+.card .product_info .product_review .stars_outer .stars_inner
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.card .product_info .product_review .stars_outer::before
+{
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #D6D3CB;
+  font-size: 18px;
+}
+
+.card .product_info .product_review .stars_inner::before
+{
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #e6ab38;
+  font-size: 18px;
+}
+
+
+.card .product_info .product_review img
+{
+  width: 16px;
+}
+
+.card .product_info .product_review .product_rating_points
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #6D6C6B;
+  font-family: SF Pro Display;
+}
+
 .card a {
   font-weight: 400;
   font-size: 20px;

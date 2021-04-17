@@ -1,0 +1,291 @@
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-FREE/Gilroy-ExtraBold.otf');
+}
+@font-face {
+  font-family: SF Pro Display;
+  src: url('../fonts/SF-Font-Pro/SF-Pro-Display-Regular.otf');
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #ffffff;
+}
+header {
+  /* background-color: aqua; */
+  padding: 10px 150px 10px 150px;
+  position: fixed;
+  width: 100vw;
+  height: 10vh;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #EFEDEA;
+  background-color: transparent;
+  top: 0%;
+}
+
+header .search_box
+{
+  width: 640px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
+  border: 1px solid #D6D3CB;
+}
+
+header .search_box img
+{
+  margin: 0 10px;
+}
+
+header .search_box input
+{
+  border: none;
+  outline: none;
+  height: 90%;
+  width: 90%;
+  color: #918878;
+  font-size: 14px;
+  padding-left: 5px;
+  font-family: SF Pro Display;
+  font-weight: 500;
+}
+
+header .user_profile
+{
+  display: flex;
+  align-items: center;
+}
+
+header .user_profile img
+{
+  cursor: pointer;
+}
+
+header .user_profile .user_initials
+{
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 0 15px 0 25px;
+  background-color: #e6ab39;
+  border-radius: 50%;
+  color: #ffffff;
+  font-family: Gilroy;
+  cursor: pointer;
+
+}
+
+.container
+{
+    width: 100%;
+    /* height: 90vh; */
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container.container_empty
+{
+  height: 90vh;
+}
+
+
+.container.container_wishlist
+{
+  width: 80%;
+  margin: 10vh auto;
+}
+
+.container .container_info p
+{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    font-family: Gilroy;
+}
+
+.container .container_info p:last-child
+{
+    font-size: 32px;
+    margin-top: 20px;
+    color: #e6ab39;
+}
+
+.container .container_info p img
+{
+    width: 44px;
+}
+
+.container .container_browse
+{
+    margin-top: 80px;
+}
+
+.container .container_browse button
+{
+    width: 170px;
+    height: 60px;
+    border-radius: 50px;
+    outline: none;
+    border: 2px solid #e6ab39;
+    color: #e6ab39;
+    background: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: .4px;
+    font-family: SF Pro Display;
+    font-weight: 700;
+}
+
+.items{
+  
+  padding: 20px 0px 0px 0px;
+  width: 100%;
+
+}
+h3 {
+  font-weight: 800;
+  font-size: 32px;
+  margin-left: 20px;
+  font-family: Gilroy;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* background-color: blueviolet; */
+  overflow: hidden;
+}
+.cardheight {
+  height: auto;
+}
+.products {
+  padding: 144px 150px 144px 150px;
+}
+.card {
+  width: 168px;
+  /* height: 211px; */
+  text-align: center;
+  margin: 10px;
+}
+.card .imgbx {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  border-radius: 8px;
+}
+
+.card .imgbx img {
+  width: 80%;
+  height: auto;
+}
+
+.card .imgbx .product_feature
+{
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  display: flex;
+}
+
+.card .imgbx .product_btn
+{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.card .imgbx .product_btn:hover
+{
+  background-color: #efedea;
+}
+
+.card .imgbx .product_btn img
+{
+  width: 12px;
+}
+
+.card .product_info
+{
+  margin-top: 12px;
+  padding-left: 3px;
+  text-align: left;
+}
+
+.card .product_info .product_price
+{
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: SF Pro Display;
+}
+
+.card .product_info .product_desc a
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #6D6C6B;
+  font-family: SF Pro Display;
+}
+
+.card .product_info .product_review
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3px 0;
+}
+
+.card .product_info .product_review img
+{
+  width: 16px;
+}
+
+.card .product_info .product_review .product_review_points
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #6D6C6B;
+  font-family: SF Pro Display;
+}
+
+.card a {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: SF Pro Display;
+  color: black;
+  text-decoration: none;
+}
+h4 {
+  font-weight: 400;
+  font-size: 20px;
+  font-family: SF Pro Display;
+  color: black;
+}
