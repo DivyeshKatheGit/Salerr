@@ -11,6 +11,13 @@ function formatResponse(data)
 function sortByPrice(data)
 {
 
+     return data.sort((a,b)=> a.product_price - b.product_price);
+}
+
+function sortByRating(data)
+{
+    return data.sort((a,b)=> b.rating - a.rating);
+    
 }
 
 function filterResponse(data)
@@ -82,9 +89,16 @@ function getSearchedProduct(product)
         axios.get('https://vcat-nasa.herokuapp.com/nasas')
         .then(response => {
             let Cdata = getCategoryData(response.data,product);
-            let data = formatResponse(Cdata);
-            // console.log(data.length);
-            resolve(data)
+            let sortedPrice = formatResponse(sortByPrice(JSON.parse(JSON.stringify(Cdata))));
+            let sortedRating = formatResponse(sortByRating(JSON.parse(JSON.stringify(Cdata))));
+
+        
+            let data = {
+                sortedPrice : sortedPrice,
+                sortedRating : sortedRating,
+                items : Cdata.length
+            }
+            resolve(data);
         })
         .catch(error =>{
             reject(error)
@@ -143,5 +157,10 @@ function getWishlist(IDarr)
         
     })
 }
+
+getSearchedProduct('electronics')
+.then((response)=>{
+    console.log(response.length);
+})
 
 module.exports = {getProductDetails,getSearchedProduct,getProductFromID,getWishlist};

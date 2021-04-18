@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const EmailValidator = require('email-validator');
 const conn = require('./connection');
 const {getProductDetails,getSearchedProduct,getProductFromID,getWishlist} = require('./api/productdetails');
-const e = require('express');
 const router = express.Router();
 
 //body parser
@@ -24,6 +23,11 @@ router.get('/login',(req,res)=>
         message : 'success'
     });
 });
+
+//logout
+router.get('/logout',(Req,res)=>{
+    res.redirect('/');
+})
 
 //signup page
 router.get('/signup',(req,res)=>{
@@ -400,7 +404,7 @@ router.post('/search',urlencodedParser,(req,res)=>{
 
         let productsIDarr;
 
-        let isEmpty = response.length > 0 ? false : true;
+        let isEmpty = response.items > 0 ? false : true;
 
 
 
@@ -419,7 +423,8 @@ router.post('/search',urlencodedParser,(req,res)=>{
                             userEmail : Email,
                             userName : userName,
                             profileCode : profileCode,
-                            data : response,
+                            priceData : response.sortedPrice,
+                            ratingData : response.sortedRating,
                             product : product,
                             isEmpty : isEmpty,
                             IDarr : productsIDarr
@@ -432,7 +437,8 @@ router.post('/search',urlencodedParser,(req,res)=>{
                             userEmail : Email,
                             userName : userName,
                             profileCode : profileCode,
-                            data : response,
+                            priceData : response.sortedPrice,
+                            ratingData : response.sortedRating,
                             product : product,
                             isEmpty : isEmpty,
                             IDarr : ''
@@ -448,7 +454,8 @@ router.post('/search',urlencodedParser,(req,res)=>{
                     userEmail : Email,
                     userName : userName,
                     profileCode : profileCode,
-                    data : response,
+                    priceData : response.sortedPrice,
+                    ratingData : response.sortedRating,
                     product : product,
                     isEmpty : isEmpty,
                     IDarr : ''
@@ -524,7 +531,7 @@ router.post('/browse',urlencodedParser,(req,res)=>{
                             userEmail : userEmail
                         });
                     })
-})
+});
 
 
 module.exports = router;

@@ -44,6 +44,9 @@
                     <%=profileCode%>
                 <%}%>   
             </div>
+            <button class="btn1 btn-logout">
+                <a href="/logout">Logout</a>
+            </button>
             
         </div>
     </header>
@@ -54,8 +57,21 @@
                 <div class="product_name">
                     <% if(!isEmpty){ %>
                         <p id="search_product">"<%=product%>"</p>
+                        <div class="product_filter">
+                            <img src="./assets/icons/filter.svg" />
+                            <div class="filter_dropdown">
+                                <div class="filter_title">
+                                    <p>Filter</p>
+                                </div>
+                                <div class="filter_options">
+                                    <p class="f_opt" onclick="selectFilter('price')">Price</p>
+                                    <p class="f_opt" onclick="selectFilter('ratings')">Ratings</p>
+                                </div>
+                                
+                            </div>
+                        </div>
                     <% } %>
-                    <!-- <p>Filter</p> -->
+                    
                 </div>
 
     
@@ -65,15 +81,71 @@
                             <p>Oops! We can't find anything!</p>
                         </div>
                     <% } else{ %>  
-                        <% data.forEach(d =>{ %>
-                            <div class="product_card">
+                        <% priceData.forEach(d =>{ %>
+                            <div class="product_card price_card">
                                 <div class="product_img">
                                     <img src='<%=d.product_image[0].name %>' alt="" srcset="">
                                 </div>
                                 <div class="product_details">
                                     <div class="product_price">
                                         <p>&#8377; <%=d.product_price %></p>
-                                        <div><img src="./assets/images/Amazon_icon.png"/></div>
+                                        <div>
+                                            <% if(d.site === "Amazon"){ %>
+                                                <img src="./assets/images/Amazon_icon.png"/>
+                                            <% } %>
+                                            <% if(d.site === "Snapdeal"){ %>
+                                                <img src="./assets/images/Snapdeal_Logo.png"/>
+                                            <% } %>
+                                            <% if(d.site === "Flipcart"){ %>
+                                                <img src="./assets/images/Flipcart_icon.png"/>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                    <div class="product_info">
+                                        <p><%= d.product_name %></p>
+                                    </div>
+                                    <div class="product_rating">
+                                        <div class="stars_outer" data-rating=<%= d.rating %>>
+                                            <div class="stars_inner"></div>
+                                        </div>
+                                        <p class="product_rating_points"><%= d.rating %></p>
+                                    </div>
+                                </div>
+                                <div class="product_buttons">
+                                    <% if(IDarr.includes(d.id)) { %>
+                                        <div class="wishlist product_btn" data-id='<%= d.id %>' data-status='true'>
+                                            <img src="./assets/icons/HeartWishFill.svg" />
+                                        </div>
+                                    <% } else{ %>
+                                        <div class="wishlist product_btn" data-id='<%= d.id %>' data-status="false">
+                                            <img src="./assets/icons/HeartWish.svg" />
+                                        </div>
+                                    <% } %>
+                                    <div class="redirect product_btn">
+                                        <a target="_blank" href=<%=d.product_link %>><img src="./assets/icons/Link.svg" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>  
+                        <% ratingData.forEach(d =>{ %>
+                            <div class="product_card rating_card">
+                                <div class="product_img">
+                                    <img src='<%=d.product_image[0].name %>' alt="" srcset="">
+                                </div>
+                                <div class="product_details">
+                                    <div class="product_price">
+                                        <p>&#8377; <%=d.product_price %></p>
+                                        <div>
+                                            <% if(d.site === "Amazon"){ %>
+                                                <img src="./assets/images/Amazon_icon.png"/>
+                                            <% } %>
+                                            <% if(d.site === "Snapdeal"){ %>
+                                                <img src="./assets/images/Snapdeal_Logo.png"/>
+                                            <% } %>
+                                            <% if(d.site === "Flipcart"){ %>
+                                                <img src="./assets/images/Flipcart_icon.png"/>
+                                            <% } %>
+                                        </div>
                                     </div>
                                     <div class="product_info">
                                         <p><%= d.product_name %></p>

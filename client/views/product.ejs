@@ -41,11 +41,21 @@
             </form>
         </div>
         <div class="user_profile">
-            <a href="/favourites"><img src="./assets/icons/Heart.svg"/></a>
+            <a href="/favourites">
+                <% if(IDarr.length > 0) { %>
+                    <img width="28" src="./assets/icons/Heart.svg"/>
+                <% } else { %>
+                    <img width="28" src="./assets/icons/HeartEmpty.svg"/>
+                <% } %>
+            </a>
             <div class="user_initials">
                 <% if(status==="success"){%>
                     <%=profileCode%>
                 <%}%>   
+            </div>
+            <button class="btn1 btn-logout">
+                <a href="/logout">Logout</a>
+            </button>
             </div>
             
         </div>

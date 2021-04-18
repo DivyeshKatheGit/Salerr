@@ -33,7 +33,7 @@ h1 {
 .navbar {
     height: 10vh;
     font-size: 18px;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     /* padding: 0 150px; */
 }
 
@@ -44,6 +44,30 @@ h1 {
     margin-right: 32px;
 }
 
+.navbar .nav-item a
+{
+    display: inline-block;
+    position: relative;
+}
+
+.navbar .nav-item a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #E6AB39;
+    transform-origin: bottom right;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+  .navbar .nav-item a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
 
 .lottie-container .lottie-svg
 {
@@ -55,27 +79,51 @@ h1 {
     height: 40px;
     border-radius: 4px;
     border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: rgba(230,171,57,0.15);
 }
 
-.btn-login {
+
+
+nav .btn1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+    background-color: #E6AB39;
+    opacity: 0;
+}
+
+nav .btn1 a {
+    z-index: 1;
+    position: relative;
+    color: #E6AB39;
+}
+
+nav .btn1:hover a {
+    color: hsl(222, 100%, 95%);
+}
+
+nav .btn1:hover::before {
+    opacity: 1;
+    transition-duration: .85s;
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
+}
+
+nav .btn-login {
     background: rgba(230,171,57,0.15);
     color: #E6AB39;
     margin-right: 30px;
 }
 
-.btn-login a{
-    color: #E6AB39;
-}
 
-.btn-signup {
-    background-color: #E6AB39;
-    color: #ffffff;
-}
-
-.btn-signup a
-{
-    color: #ffffff;
-}
 
 .btn-shop {
     background-color: #E6AB39;
@@ -92,6 +140,7 @@ h1 {
 h2 {
     font-weight: 800;
     text-align: center;
+    margin-bottom: 10px;
 }
 .features h5 {
     margin-top: 25px;
@@ -112,7 +161,7 @@ h2 {
 .comment {
     padding: 50px;
     background-color: #ffffff;
-    color: #000000;
+    color: #6d6c6b;
     border-radius: 10px;
     margin: 15px;
 }
@@ -140,3 +189,5 @@ h2 {
     width: max-content;
     color: #ffffff;
 }
+
+  

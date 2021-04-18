@@ -93,6 +93,63 @@ header .user_profile .user_initials
 
 }
 
+header .btn1 {
+  width: 110px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background: rgba(230,171,57,0.15);
+}
+
+header .btn1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    transform: translate3d(-50%,-50%,0) scale3d(0,0,0);
+    transition: opacity .4s cubic-bezier(.19,1,.22,1),transform .75s cubic-bezier(.19,1,.22,1);
+    background-color: #E6AB39;
+    opacity: 0;
+}
+
+header .btn1 a {
+    z-index: 1;
+    position: relative;
+    color: #E6AB39;
+}
+
+header .btn1:hover a {
+    color: hsl(222, 100%, 95%);
+}
+
+header .btn1:hover::before {
+    opacity: 1;
+    transition-duration: .85s;
+    transform: translate3d(-50%,-50%,0) scale3d(1,1,1)
+}
+
+header .btn-logout {
+  background: rgba(230,171,57,0.15);
+  color: #E6AB39;
+  margin-left: 30px;
+}
+
+header .btn-logout a{
+  color: #E6AB39;
+  font-size: 18px;
+  font-family: Gilroy;
+}
+
+a, a:hover, a:visited, a:active {
+  text-decoration: none;
+}
+
 
 .items{
   
@@ -151,8 +208,8 @@ h3 {
 
 .card .imgbx .product_btn
 {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: #ffffff;
   display: flex;
@@ -169,7 +226,7 @@ h3 {
 
 .card .imgbx .product_btn img
 {
-  width: 12px;
+  width: 16px;
 }
 
 .card .product_info
@@ -272,6 +329,7 @@ h4 {
   font-size: 20px;
   font-family: SF Pro Display;
   color: black;
+  margin-top: 8px;
 }
 .viewmore {
   cursor: pointer;
@@ -385,3 +443,4 @@ footer {
 /* Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
 }
+
