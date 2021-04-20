@@ -314,7 +314,8 @@ router.post('/trial',urlencodedParser,(req,res)=>{
         // console.log(response);
         res.render('trial',{
             status : 'success',
-            data : response
+            data : response.pdata,
+            sdata : response.sdata
         });
     })
     .catch((error)=>{

@@ -58,7 +58,7 @@ function getCategoryData(data,product)
 
 function getProduct(data,id)
 {
-    console.log(id);
+    // console.log(id);
     let product = data.filter((d)=>{
         return d.id === id
     });
@@ -112,9 +112,13 @@ function getProductFromID(id)
         axios.get('https://vcat-nasa.herokuapp.com/nasas')
         .then(response => {
             let Cdata = getProduct(response.data,id);
-            let data = formatResponse(Cdata);
-            // console.log(data.length);
-            // console.log(data);
+            let sdata = getSimilarProducts(response.data,id);
+            let pdata = formatResponse(Cdata);
+
+            let data = {
+                sdata : sdata,
+                pdata : pdata
+            }
             resolve(data)
         })
         .catch(error =>{
@@ -158,9 +162,13 @@ function getWishlist(IDarr)
     })
 }
 
-getSearchedProduct('electronics')
-.then((response)=>{
-    console.log(response.length);
-})
+function getSimilarProducts(data,id)
+{
+    let product = data.filter((d)=>{
+        return d.category === 'clothes' && d.id!== id
+    });
+
+    return product;
+}
 
 module.exports = {getProductDetails,getSearchedProduct,getProductFromID,getWishlist};

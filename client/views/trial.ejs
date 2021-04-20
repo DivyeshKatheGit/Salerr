@@ -49,6 +49,24 @@
                 <div class="buy_now">
                     <a target="_blank" href="<%= data[0].product_link %>">Buy Now</a>
                 </div>
+
+                <div class="similar_section">
+                    <p>Similar Products</p>
+                    <div class="similar_cards">
+
+                        <% sdata.forEach(d =>{ %> 
+                            <form method="POST" action="/trial">
+                                <input type="hidden" value='<%= d.id %>' name="id" />
+                                <button type="submit" style="outline: none; border: none; background: none;">
+                                    <div class="card">
+                                        <img src="<%= d.product_image[0].name %>" alt=''/>
+                                    </div>
+                                </button>
+                            </form>
+                        <% }); %>
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
