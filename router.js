@@ -183,7 +183,7 @@ router.post('/signupApp',urlencodedParser,(req,res)=>{
                     conn.query(`INSERT INTO user_accounts (Name,Email,Password) VALUES ('${Name}','${Email}','${Password}')`,(err,result)=>{
                         if(!err)
                         {
-                            console.log('inserted');
+                            // console.log('inserted');
                             res.render('signup',{
                                 status : 'success',
                                 message : 'Signup Successful'
@@ -336,6 +336,7 @@ router.get('/favourites',urlencodedParser,(req,res)=>{
             result.forEach(row => {
                     let idString = row.ProductID;
 
+
                     if(idString === '')
                     {
                         res.render('wishlist',{
@@ -415,7 +416,7 @@ router.post('/search',urlencodedParser,(req,res)=>{
                 result.forEach(row => {
                     let idString = row.ProductID;
 
-                    console.log(idString);
+                    // console.log(idString);
                     if(idString) 
                     {
                         productsIDarr = idString.split(',');

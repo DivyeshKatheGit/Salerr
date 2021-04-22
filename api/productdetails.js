@@ -106,6 +106,22 @@ function getSearchedProduct(product)
     })
 }
 
+function getPFromID(id)
+{
+    return new Promise((resolve,reject)=>{
+        axios.get('https://vcat-nasa.herokuapp.com/nasas')
+        .then(response => {
+            let Cdata = getProduct(response.data,id);
+            let data = formatResponse(Cdata);
+
+            resolve(data)
+        })
+        .catch(error =>{
+            reject(error)
+        })
+    })
+}
+
 function getProductFromID(id)
 {
     return new Promise((resolve,reject)=>{
@@ -134,7 +150,7 @@ function getWishlist(IDarr)
     return new Promise((resolve,reject)=>{
         var loop = new Promise((res,rej)=>{
             IDarr.forEach((id,indx)=>{
-                getProductFromID(id)
+                getPFromID(id)
                 .then((resp)=>{
                     products.push(resp);
                     if(products.length == IDarr.length)
@@ -152,7 +168,7 @@ function getWishlist(IDarr)
         })
 
         loop.then((response)=>{
-            console.log(response.length);
+            // console.log(response.length);
             resolve(response)
         })
         .catch((err)=>{

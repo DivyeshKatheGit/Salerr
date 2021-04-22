@@ -30,7 +30,7 @@
         <div class="search_box">
             <img src="./assets/icons/Search.png" alt="Q"/>
             <form method="POST" action="/search" id="serach_form">
-                <input type="text" placeholder="What are you looking for?" id="search" name="search">
+                <input type="text" placeholder="What are you looking for?" id="search" name="search" autocomplete="off">
                 <div class="user_data">
                     <input type="hidden" id="user_email" value='<%=userEmail%>' />
                     <input type="hidden" id="user_name" value='<%=userName%>' />
@@ -112,6 +112,16 @@
                                     </div>
                                 </div>
                                 <div class="product_buttons">
+                                    <% if(d.product_image[1]) { %>
+                                        <form method="POST" action="/trial">
+                                            <input type="hidden" value='<%= d.id %>' name="id" />
+                                            <button type="submit" style="outline: none; border: none; background: none;">
+                                                <div class="try product_btn">
+                                                    <img src="./assets/icons/3d.svg" />
+                                                </div>
+                                            </button>
+                                        </form>
+                                    <% } %>
                                     <% if(IDarr.includes(d.id)) { %>
                                         <div class="wishlist product_btn" data-id='<%= d.id %>' data-status='true'>
                                             <img src="./assets/icons/HeartWishFill.svg" />
@@ -158,6 +168,16 @@
                                     </div>
                                 </div>
                                 <div class="product_buttons">
+                                    <% if(d.product_image[1]) { %>
+                                        <form method="POST" action="/trial">
+                                            <input type="hidden" value='<%= d.id %>' name="id" />
+                                            <button type="submit" style="outline: none; border: none; background: none;">
+                                                <div class="try product_btn">
+                                                    <img src="./assets/icons/3d.svg" />
+                                                </div>
+                                            </button>
+                                        </form>
+                                    <% } %>
                                     <% if(IDarr.includes(d.id)) { %>
                                         <div class="wishlist product_btn" data-id='<%= d.id %>' data-status='true'>
                                             <img src="./assets/icons/HeartWishFill.svg" />

@@ -33,7 +33,7 @@
         <div class="search_box">
             <img src="./assets/icons/Search.png" alt="Q"/>
             <form method="POST" action="/search" id="serach_form">
-                <input type="text" placeholder="What are you looking for?" id="search" name="search">
+                <input type="text" placeholder="What are you looking for?" id="search" name="search" autocomplete="off">
                 <div class="user_data">
                     <input type="hidden" id="user_email" value='<%=userEmail%>' />
                     <input type="hidden" id="user_name" value='<%=userName%>' />
